@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource historyDb {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TYPE {
+  CREATE
+  UPDATE
+}
+
+model History {
+  id           Int      @id @default(autoincrement())
+  type         TYPE
+  userId       Int
+  user         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("histories")
+}

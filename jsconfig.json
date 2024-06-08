@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "baseUrl": "./",
+        "paths": {
+            "@utils/*": ["src/utils/*"],
+            "@middleware/*": ["src/middleware/*"],
+            "@controller/*": ["src/controller/*"],
+            "@service/*": ["src/service/*"],
+            "@repository/*": ["src/repository/*"],
+            "@constant/*": ["src/constant/*"],
+            "@lib/*": ["src/lib/*"],
+            "@route/*": ["src/route/*"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": ["./src/**/*.js"]
+}
