@@ -12,7 +12,6 @@ const historyRoutes = express.Router();
 
 historyRoutes.get(
     HISTORY_API.GET_ALL,
-
     historyController.getPaginatedHistory.bind(historyController),
 );
 

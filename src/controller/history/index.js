@@ -1,8 +1,8 @@
 import { parsePaginationParams } from '@utils/helper';
 
 class HistoryController {
-    constructor(userService) {
-        this.userService = userService;
+    constructor(historyService) {
+        this.historyService = historyService;
     }
 
     async getPaginatedHistory(req, res, next) {
@@ -15,7 +15,7 @@ class HistoryController {
                 filters: parsedFilters,
             } = parsePaginationParams({ pageSize: listSize, page, filters });
 
-            const histories = await this.userService.getPaginatedHistories(
+            const histories = await this.historyService.getPaginatedHistories(
                 pageSize,
                 skip,
                 parsedFilters,
